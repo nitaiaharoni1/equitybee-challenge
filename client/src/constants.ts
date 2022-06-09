@@ -1,13 +1,7 @@
 export const constants = {
   routes: {
     home: '*',
-    login: '/login',
-    register: '/register',
-    dashboard: '/dashboard',
-    profile: '/profile',
-    settings: '/settings',
-    logout: '/logout',
-    notFound: '/404',
+    details: '/details/:domain',
   },
   api: {
   },

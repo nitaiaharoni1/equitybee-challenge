@@ -1,4 +1,5 @@
 import { FC, FormEvent, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { CompanyItem } from './components/CompanyItem';
 
@@ -9,6 +10,7 @@ import { isValidDomain } from 'utils/functions/isValidDomain';
 export const CompaniesPage: FC = () => {
   const { getCompany, companies } = useContext(CompaniesContext);
   const [input, setInput] = useState('');
+  const navigate = useNavigate();
 
   const handleInputChange = (value: string) => {
     setInput(value);
@@ -20,6 +22,10 @@ export const CompaniesPage: FC = () => {
     setInput('');
   };
 
+  const handleCompanyClick = (domain: string) => {
+    navigate(`/details/${domain}`);
+  };
+
   const isValid = isValidDomain(input);
 
   return (
@@ -28,7 +34,7 @@ export const CompaniesPage: FC = () => {
         Companies List
       </h1>
 
-      <div>
+      <div className='mt-3'>
         <form
           className='flex'
           onSubmit={handleSubmit}
@@ -54,6 +60,7 @@ export const CompaniesPage: FC = () => {
             <CompanyItem
               key={company.domain}
               company={company}
+              onCompanyClick={() => handleCompanyClick(company.domain)}
             />
           ))}
         </div>

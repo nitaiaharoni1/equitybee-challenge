@@ -1,1 +1,2 @@
-export * from './CompaniesPage/CompaniesPageWrapper';
+export * from './CompaniesPage/CompaniesPage';
+export * from './CompanyDetailsPage/CompanyDetailsPage';
