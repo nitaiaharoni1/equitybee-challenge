@@ -11,6 +11,10 @@ export const CompaniesProvider: FC = ({ children }) => {
 
   const getCompany = async (domain: string) => {
     const res = await fetchCompany(domain);
+    if (!res) {
+      console.error('Error fetching company');
+      return;
+    }
     setCompanies((prevComps) => uniqBy([...prevComps, res], 'domain'));
   };
 
