@@ -1,5 +1,5 @@
 export interface ICompany {
-  domain?: string;
+  domain: string;
   name?: string;
   logo?: string;
   type?: string;

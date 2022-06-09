@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/nitaiaharoni1/equitybee-challenge#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "nodemon": "^2.0.16"
   }
