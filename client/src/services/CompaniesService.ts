@@ -1,5 +1,3 @@
 import axios from 'axios';
 
-import { ICompany } from '../types/interfaces/ICompany';
-
-export const fetchCompany = (domain: string): Promise<ICompany> | undefined => axios.get(`/companies/${domain}`);
+export const fetchCompany = (domain: string) => axios.get(`/company/${domain}`);
